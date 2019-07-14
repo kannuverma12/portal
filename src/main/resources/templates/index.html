@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+
+    <script th:src="@{/main.js}"></script>
+    <link th:href="@{/main.css}" rel="stylesheet" />
+
+    <head>
+<body ng-app="EmployeeManagement" ng-controller="EmployeeController">
+<h3>
+    RBS Employee Portal
+</h3>
+<br/>
+<a class="edit-button" ng-click="getAllEmployees('name')">SortByName</a>
+<a class="edit-button" ng-click="getAllEmployees('salary')">SortBySalary</a>
+<table border="1">
+    <tr>
+        <th>Emp Name</th>
+        <th>Emp Salary</th>
+        <th>Emp Hire date</th>
+    </tr>
+    <!-- $scope.employees -->
+    <tr ng-repeat="employee in employees">
+        <td> {{ employee.name }}</td>
+        <td> {{ employee.salary }}</td>
+        <td >{{ employee.hiredate }}</td>
+    </tr>
+</table>
+</body>
+</html>
